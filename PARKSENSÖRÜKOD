@@ -1,0 +1,50 @@
+# echoPin 6'yı tanımlayın  
+# trigPin 7'yi tanımla  
+# buzzerPin 8'i tanımla  
+
+int maksimumAralık = 50 ;
+int minimumAralık = 0 ;
+
+
+
+geçersiz kurulum () {
+  pinMode (trigPin, ÇIKIŞ);
+  pinMode (echoPin, GİRİŞ);
+  pinMode (buzzerPin, ÇIKIŞ);
+
+}
+
+değişim (dönüşüm) {
+
+  int olcum = mesafe (maximumRange, minimumRange);
+  melodi (olcum* 10 );
+
+}
+
+int mesafe ( int maxrange, int minrange)
+{
+  uzun süre, mesafe;
+
+  digitalWrite (trigPin,DÜŞÜK);
+  gecikmeMikrosaniye ( 2 );
+  digitalWrite (trigPin, YÜKSEK);
+  gecikmeMikrosaniye ( 10 );
+  digitalWrite (trigPin, LOW);
+
+  süre = pulseIn (echoPin, YÜKSEK);
+  mesafe = süre / 58.2 ;
+  gecikme ( 50 );
+
+  if (mesafe >= maksimum aralık || mesafe <= minimum aralık)
+  geri 0 ;
+  dönüş hareketi;
+}
+
+int melodi ( int dly)
+{
+  ton (buzzerPin, 440);
+  gecikme (gün);
+  noTone (buzzerPin);
+  gecikme (gün);
+  
+}
